@@ -11,17 +11,27 @@ class TaskComponent extends Component
     public $title = "";
     public $description = "";
     public $iconOptions = [
-        ["coffee", "☕"], 
-        ["clock", "⏰"], 
-        ["buble", "💭"], 
-        ["lifting", "🏋️‍♀️"],
-        ["books", "📚"]
+        "coffee" => "☕", 
+        "clock" => "⏰", 
+        "bubble" => "💭", 
+        "lifting" => "🏋️‍♀️",
+        "books" => "📚"
     ];
+    public $statusOptions = ["In_Progress", "Completed", "Wont_do"];
     public $icon = "";
     public $status = "";
     
-    public function getTask() {
+    public function mount() {
         $this->tasks = Task::where("user_id", auth()->user()->id)->get();
+    }
+
+    public function colorTaskHandle ($status) {
+        return match(true) {
+            $status === "In_Progress" => "progress",
+            $status === "Completed" => "completed",
+            $status === "Wont_do" => "wont-do",
+            default => "skin-default"
+        };
     }
 
     public function triggerIcon ($newValue) {

@@ -7,8 +7,10 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <title>Document</title>
 </head>
-<body>
-    <h1 class="text-white w-full bg-black">Welcome home</h1>
-    @livewire("task-component")
+<body class="flex justify-center">
+    <main class="max-w-6xl w-full">
+        <h1 class="text-white w-full bg-black">Welcome home</h1>
+        @livewire("task-component")
+    </main>
 </body>
 </html>

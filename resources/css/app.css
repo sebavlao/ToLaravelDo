@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+:root {
+    --skin-progress: #F5D565;
+    --skin-progress-contrast: #E9A23B;
+    --skin-completed:#A0ECB1;
+    --skin-completed-contrast: #32D657;
+    --skin-wont-do: #F7D4D3;
+    --skin-wont-do-contrast: #DD524C;
+    --skin-default: #E3E8EF;
+    --skin-create: #F5E8D5;
+    --skin-create-contrast: #E9A23B;
+}
